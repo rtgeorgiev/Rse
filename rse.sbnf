@@ -1,0 +1,30 @@
+-- LL(1) Grammar for Rse
+
+Program -> MAIN LCBR Statement* RCBR
+
+Statement -> PRINTINT Exp SEMIC
+Statement -> PRINTCHAR Exp SEMIC
+Statement -> IF LBR Exp RBR THEN Statement* ELSE Statement* ENDIF
+Statement -> DO LCBR Statement* RCBR UNTIL LBR Exp RBR
+Statement -> ID EQUALS Exp SEMIC
+
+Exp ->  BasicExp ExpRest
+
+BasicExp -> INT
+BasicExp -> ID
+BasicExp -> LBR Exp RBR
+BasicExp -> EQ Exp ExpRest
+
+ExpRest -> ADD Exp
+ExpRest -> MUL Exp
+ExpRest -> SUB Exp
+ExpRest -> DIV Exp
+ExpRest -> LEQ Exp
+ExpRest -> EQ Exp
+ExpRest -> RBR
+ExpRest -> LT Exp
+ExpRest -> SEMIC
+
+
+
+

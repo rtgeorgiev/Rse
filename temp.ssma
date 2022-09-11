@@ -1,0 +1,11 @@
+push 0
+push 0
+mul
+push 7
+push 3
+sysc
+push 19
+push 3
+sysc
+halt
+.data
